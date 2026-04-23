@@ -1,0 +1,29 @@
+body{
+    background-color:rgb(255, 0, 111) ;
+    background-image: linear-gradient(rgb(81, 20, 101),rgb(255, 0, 111));}
+#ab{
+    background-color: aliceblue;
+}
+.o{
+    transition: 50ms;
+}
+#mainlogo{
+    width:min(30vw,40vh);
+}
+table td img{
+    translate: 0vh 0vh;
+    transition: 500ms;
+    text-align: center;
+    width: 10vw;
+    height: 10vw;
+    font-size: large;}
+#a4:hover{
+    border: min(0.3vh,0.3vw) yellow solid;
+    background-color:rgba(240, 248, 255, 0.743) ;
+}
+#a4{
+    position: relative;
+}
+#playbutton{
+    width:min(15vw,20vh);
+}
