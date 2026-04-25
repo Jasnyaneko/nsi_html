@@ -115,7 +115,7 @@ let playing = false
 startbutton.addEventListener("click",() => {
     console.log(playing)
     if(playing == false){
-        startbutton.setAttribute("src","../photo/stop_button.svg")
+        startbutton.setAttribute("src","./photo/stop_button.svg")
         playing = true
 
         minirow_game(6,300,4,() => {
@@ -127,6 +127,7 @@ startbutton.addEventListener("click",() => {
         })
     }
     else{
+        startbutton.setAttribute("src","./photo/play_button.svg")
         stop_play()
         playing = false
     } 
