@@ -1,3 +1,66 @@
+:root{
+    --pressed-particle0 :"";
+    --pressed-particle1 :"";
+    --pressed-particle2 :"";
+    --pressed-particle3 :"";
+}
+
+table{
+    width: 40vw;
+background-color: aquamarine;
+position: absolute;
+bottom: 10%;
+right:50%;
+translate: 50%;
+}
+
 table td{
-    transition: 1000ms;
+    
+    text-align: center;
+    background-color: rgb(69, 73, 77);
+    transition: 100ms;
+}
+
+table td::after{
+    position: absolute;
+    top: 100%;
+    translate: -50%;
+}
+
+#k0::after{content: var(--pressed-particle0);}
+#k1::after{content: var(--pressed-particle1);}
+#k2::after{content: var(--pressed-particle2);}
+#k3::after{content: var(--pressed-particle3);}
+
+#game{
+    background-color: yellowgreen;
+    width: 80vw;
+    height: 60vh ;
+    display: block;
+    position: absolute;
+    top: 20vh ;
+    right: 50vw ;
+    translate: 50% 0%;
+}
+#start_stop{
+
+    width: 10vw;
+    height: inherit;
+}
+#score_board{
+    position: absolute;
+    right: 5vw;
+}
+#menu{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position:fixed;
+    width: 100vw;
+    height: 100vh;
+    right: 50%;
+    top: 50%;
+    translate: 50% -50%;
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 0);
 }

@@ -1,3 +1,6 @@
+
+document.querySelector(":root").style.setProperty("--pressed-particle0","''") 
+
 let playing = false
 
 let loop;
@@ -14,7 +17,7 @@ let init_part = () => ({
 //part pour patrition, représente les éléments du jeu de rythme , les listes contiennent toutes quatres variables correspondant respectivement a une case
     totalnote:0,
     totalscore:0,
-    timestamps:[[760,760*2],[760,760*3,760*5,760*6],[760*2,760*4],[760*3,760*4]],
+    timestamps:[[500,500*2],[500,500*3,500*5,500*6],[500*2,500*4],[500*3,500*4]],
     //liste de liste contenant les différents moments où les chaque note doit être appuyé
     iterator:[0,0,0,0],
     key:["a","s","d","f"],
@@ -48,7 +51,12 @@ const rythmloop = () => {
         }
         else if(part.timestamps[i][part.iterator[i]] < (now - time_gap)){
             // regarde si la note est passé auquel cas l'iterateur de la case passe a la prochaine case
+            if(!part.pressed[i].has(part.iterator[i])){
             part.miss[i] = part.miss[i] + 1
+            document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"'missed'")
+                    setTimeout(() => {
+                        document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"''")}, 300)
+        }
             part.iterator[i] = part.iterator[i] + 1
             part.totalnote = part.totalnote + 1
         }
@@ -72,19 +80,16 @@ const rythmloop = () => {
     if(part.finished.every((cases) => {
         return (cases === true)
     })){
-        part.playing = false
+        document.getElementById("start_stop").setAttribute("src","../photo/play_button.svg")
+        playing = false
         cancelAnimationFrame(loop)
+        //arrete la boucle
         return;
     }
+    playing = true
     loop = requestAnimationFrame(rythmloop)
     //loop est egale a lidentificateur le boucle et par la fonction requestAnimationFrame répeter la boucle
-}
-
-    //loop = requestAnimationFrame(rythmloop)
-    // sert a récupérer l'Id de la boucle en dehors de celle ci
-
-    
-    //arrete la boucle
+}   
 
 document.body.addEventListener("keydown",(key) => {
     // le callback spécifie la touche appuyée
@@ -101,12 +106,19 @@ document.body.addEventListener("keydown",(key) => {
                 // verifie que la note n'a pas deja été jouée (par absence dans le set)
 
                 if(Math.abs(part.timestamps[i][part.iterator[i]] - now) < 50){
-                    console.log("perfect")
-                    part.totalscore = part.totalscore + 2
+                    console.log("prefect")
+                    document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"'perfect'")
+                    setTimeout(() => {
+                        document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"''")}, 300)
+                    part.totalscore = part.totalscore + 1
                 }
                 else{
-                part.totalscore = part.totalscore + 1
+                part.totalscore = part.totalscore + 0.75
+                document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"'good'")
+                    setTimeout(() => {
+                        document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"''")}, 300)
                 }
+                document.getElementById("score").innerHTML = part.totalscore.toString()
                 part.pressed[i].add(part.iterator[i])
                 // ajoute la note au set pour qu'elle ne soit plus jouable
                 
@@ -121,13 +133,14 @@ document.body.addEventListener("keydown",(key) => {
 
 document.getElementById("start_stop").addEventListener("click",()=>{
     if(playing == false){
+        document.getElementById("start_stop").setAttribute("src","../photo/stop_button.svg")
         part = init_part()
         game_started_time = new Date().getTime()
         console.log("yyyyy")
-        playing = true
         loop = requestAnimationFrame(rythmloop)
     }
     else if(playing == true ){
+        document.getElementById("start_stop").setAttribute("src","../photo/play_button.svg")
         console.log(part)
         playing = false
 
@@ -136,6 +149,8 @@ document.getElementById("start_stop").addEventListener("click",()=>{
     else{console.log("il y a un gros probleme")}
     
 })
+
+
 
 
 /* peut être mettre des graphismes nn ? XD */
