@@ -1,9 +1,8 @@
 
-document.querySelector(":root").style.setProperty("--pressed-particle0","''") 
-
 let playing = false
-
+// indique si le jeu est en court ou non
 let loop;
+//les fonctions est définis en dehors des boucles le sont pour etre accessible en dehors aussi
 
 let game_started_time = new Date().getTime()
 //defini quand le jeu a commencé et permet de calculer le temps écoulé depuis le début du jeu
@@ -14,19 +13,32 @@ let time_gap = 200
 let now;
 
 let init_part = () => ({
-//part pour patrition, représente les éléments du jeu de rythme , les listes contiennent toutes quatres variables correspondant respectivement a une case
+//cette fonction permet de créer un objet (les objets étants mutable) pour réintialiser l'objet part,
+// part pour patrition, représente les éléments du jeu de rythme ,
+// les listes qui contiennent quatres variables correspondant à des variable affectant les quatres colonnes du jeu indépendament les une des autres
+
     totalnote:0,
+
     totalscore:0,
+    
     timestamps:[[500,500*2],[500,500*3,500*5,500*6],[500*2,500*4],[500*3,500*4]],
-    //liste de liste contenant les différents moments où les chaque note doit être appuyé
+    //liste de liste contenant les différents moments en milliseconde où les chaque note doit être appuyé
+    
     iterator:[0,0,0,0],
+    //iterateurs des temps de click
+    
     key:["a","s","d","f"],
     //on peut changer les touches de jeux ici
+    
     pressed:[new Set(),new Set(),new Set(),new Set()],
     //représente le nombre de fois qu'une case a été jouée , l'usage de sets permet d'éviter les problemes de doubles cliques dans le jeu ceux ci ne préservant qu'une fois chaque valeurs
+    
     miss:[0,0,0,0],
     //représente les cases ratées
+    
     active_blocks:[false,false,false,false],
+    //represente les cases clickable
+    
     finished:[false,false,false,false]
     //sert a dire si une case peux etre joué ou pas
 })
@@ -41,60 +53,79 @@ const rythmloop = () => {
 
     part.active_blocks = [false,false,false,false]
     // redéfini les actives_blocks pour que les cases non actives soit mise a jour
-    console.log("loop")
+    
     for (let i = 0 ; i < 4 ; i = i + 1){
         // l'iterateur ici représente les cases
+    
         if(part.timestamps[i][part.iterator[i]] >= (now - time_gap) &&  part.timestamps[i][part.iterator[i]] <= (now + time_gap)
         /* regarde si la note actuelle se trouve dans la zone d'action */){
+    
             part.active_blocks[i] = true
             /*console.log(part.key[i])*/
         }
         else if(part.timestamps[i][part.iterator[i]] < (now - time_gap)){
-            // regarde si la note est passé auquel cas l'iterateur de la case passe a la prochaine case
+            // regarde si la note est passé et si c'est le cas l'iterateur de la case passe a la prochaine case
+    
             if(!part.pressed[i].has(part.iterator[i])){
-            part.miss[i] = part.miss[i] + 1
-            document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"'missed'")
-                    setTimeout(() => {
-                        document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"''")}, 300)
+                //verifie si la case a été dejà joué (les sets ne pouvant contenir qu'une seule fois une valeur)
+    
+                part.miss[i] = part.miss[i] + 1
+                document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"'missed'")
+                // change la variable css des pseudo elements des cases en missed
+    
+                setTimeout(() => {
+                    document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"''")
+                }, 300)
+                    //rechange la variable css au string vide apres 300 ms
         }
             part.iterator[i] = part.iterator[i] + 1
+            //passe a la note suivante de la colonne
+    
             part.totalnote = part.totalnote + 1
+            // augmente le compteur de notes
         }
     
         if(part.iterator[i] >= (part.timestamps[i].length) ){
             part.finished[i] = true
         }
+        //regarde si la suite de notes de la colonnes est terminé et l'inscrit dans la variable finished
 
         if(part.active_blocks[i]){
+            document.getElementById("k" + i.toString()).style.backgroundColor = "green"
             //defini le style des cases actives
-            document.getElementById("k" + i.toString()).style.color = "green"
         }
         else if((part.timestamps[i][part.iterator[i]] - (now + time_gap)) < 400 && (part.timestamps[i][part.iterator[i]] - (now + time_gap)) > 0){
-            document.getElementById("k" + i.toString()).style.color = "yellow"
+            document.getElementById("k" + i.toString()).style.backgroundColor = "yellow"
+            //change le style des cases qui sont 400 ms avant d'être actives
         }
         else{
+            document.getElementById("k" + i.toString()).style.backgroundColor = "red"
             // defini le style des cases inactive
-            document.getElementById("k" + i.toString()).style.color = "red"
         }
     }   
     if(part.finished.every((cases) => {
         return (cases === true)
+        //verifie si toutes les colonnes ont fini leurs séquences
     })){
         document.getElementById("start_stop").setAttribute("src","../photo/play_button.svg")
+        // remet le bouton play
+    
         playing = false
         cancelAnimationFrame(loop)
         //arrete la boucle
+    
         return;
+        //sort de la fonction en cours
     }
     playing = true
     loop = requestAnimationFrame(rythmloop)
+    //requestAnimationFrame execute une fonction a chaque frame de la page affiché ainsi plus le rafraichissement de la page est rapide plus la fonction sera executée
     //loop est egale a lidentificateur le boucle et par la fonction requestAnimationFrame répeter la boucle
 }   
 
 document.body.addEventListener("keydown",(key) => {
+    // vérifie si une touche du clavier a été appuyée
     // le callback spécifie la touche appuyée
-
-    /*console.log(part.active_blocks)*/
 
     for(let i = 0 ; i < 4 ; i = i + 1){
         //itere a travers les cases
@@ -106,51 +137,59 @@ document.body.addEventListener("keydown",(key) => {
                 // verifie que la note n'a pas deja été jouée (par absence dans le set)
 
                 if(Math.abs(part.timestamps[i][part.iterator[i]] - now) < 50){
-                    console.log("prefect")
+                    //vérifie si la durée entre la note active et l'appuie de la touche est inférieur à 50ms
+                    
                     document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"'perfect'")
+                    // change la variable css des pseudo elements des cases en perfect
+                    
                     setTimeout(() => {
                         document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"''")}, 300)
+                    //remet la variable css en string vide 300 ms après le changement précédent
+                    
                     part.totalscore = part.totalscore + 1
+                    //donne un point de score
                 }
                 else{
                 part.totalscore = part.totalscore + 0.75
+                //donne 0.75 point
+                
                 document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"'good'")
-                    setTimeout(() => {
-                        document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"''")}, 300)
+                // change la variable css des pseudo elements des cases en good
+                
+                setTimeout(() => {
+                    document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"''")}, 300)
+                    //remet la variable css en string vide 300 ms après le changement précédent
                 }
                 document.getElementById("score").innerHTML = part.totalscore.toString()
+                //met a jour l'html du score
+                
                 part.pressed[i].add(part.iterator[i])
                 // ajoute la note au set pour qu'elle ne soit plus jouable
                 
             }
         part.active_blocks[i] = false
+        //désactive la case
         }
-    }
-    if(key.key.toString() == "z"){
-        console.log("missed ",part.totalnote - part.totalscore, "\n score",part.totalscore)
     }
 })
 
 document.getElementById("start_stop").addEventListener("click",()=>{
+    //vérifie si le bouton play est cliqué
+    
     if(playing == false){
         document.getElementById("start_stop").setAttribute("src","../photo/stop_button.svg")
         part = init_part()
         game_started_time = new Date().getTime()
-        console.log("yyyyy")
         loop = requestAnimationFrame(rythmloop)
+        //si le jeu n'est pas actif change le bouton play en stop , reinitialise part et le temps de départ , et lance la boucle du jeu
     }
     else if(playing == true ){
         document.getElementById("start_stop").setAttribute("src","../photo/play_button.svg")
         console.log(part)
         playing = false
-
         cancelAnimationFrame(loop)
+        // si le jeu est en court change le bouton en play , change la variable playing en false , arrete la boucle de jeu
     }
     else{console.log("il y a un gros probleme")}
-    
+    // si playing est ni vrai ni faux , ça veut dire que la viariable a été modifiée dans la console
 })
-
-
-
-
-/* peut être mettre des graphismes nn ? XD */
