@@ -2,7 +2,19 @@ console.log("skibidi")
 const changepanel = document.querySelector("#change_panel")
 const cases = document.querySelectorAll(".cases")
 let case_obj;
-
+let descriptions_doc = [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []]
 cases.forEach((Case)=>{Case.parentElement.addEventListener("click",() => {
     console.log(Case.innerHTML)
     case_obj = Case

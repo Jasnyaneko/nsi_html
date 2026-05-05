@@ -22,8 +22,6 @@ table td{
     backdrop-filter: blur(5px);
     background-image:linear-gradient(rgba(250, 237, 222, 0.76),rgba(255, 246, 234, 0.691));
     color: rgb(62, 99, 124);
-    width: calc(90vw);
-    height: 200%;
     text-align: center;
     border: rgba(251, 255, 228, 0.298) 0.2em solid;
     border-radius: 0.3em;
