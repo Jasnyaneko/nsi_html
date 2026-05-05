@@ -1,430 +1,264 @@
 <!DOCTYPE html>
 <html>
     <head><title>page2</title>
-                <link rel = "stylesheetl" href = "../css/style1.css">
-        </head>
-    <meta charset="utf8">
+        <link rel = "stylesheet" href = "../css/style1.css">
+        <meta charset="utf8">
+    </head> 
 <body>
-    <h1 id="o"></h1>
+<div id = "content">
+    <div id="change_panel">
+            <form id="form_panel">
+                <p id = "close_panel">X</p>
+                <p>titre</p>
+                <input type = "text" value="nom_case" name="titre_case" id = "title">
+                <br>
+                <p>description</p>
+                <textarea id = "desc" name="description"></textarea>
+                <br>
+                <input value="sauvegarder" type = "submit" id = "subm">
+            </form>
+    </div>
+    <h1>emploi du temps</h1>
     <table>
-        <tr>
-                <th>
-                    heure
-                </th>
-                <th>
-                    lundi
-                </th>
-                <th>
-                    mardi
-                </th>
-                <th>
-                    mercredi
-                </th>
-                <th>
-                    jeudi
-                </th>
-                <th>
-                    vendredi
-                </th>
-                <th>
-                    samedi
-                </th>
-                <th>
-                    dimanche
-                </th>
+        <tr id = "titres">
+                <th>heure</th>
+                <th>lundi</th>
+                <th>mardi</th>
+                <th>mercredi</th>
+                <th>jeudi</th>
+                <th> vendredi</th>
+                <th>samedi</th>
+                <th>dimanche</th>
         </tr>
-        <tr>
+        <tr id = "6h">
                 <td>
-                    7h
+                    06h
                 </td>
-                 <td>
-                    sommeil
-                </td>
-                 <td>
-                    sommeil
-                </td>
-                 <td>
-                    sommeil
-                </td>
-                 <td>
-                    sommeil
-                </td>
-                 <td>
-                    sommeil
-                </td>
-                 <td>
-                    sommeil
-                </td>
-                 <td>
-                    sommeil
-                </td>
+                <td><p class = "cases" id="1">bon sommeil</p></td>
+                <td><p class = "cases" id="2">mauvais sommeil</p></td>
+                <td><p class = "cases" id="3">mauvais sommeil</p></td>
+                <td><p class = "cases" id="4">mauvais sommeil</p></td>
+                <td><p class = "cases" id="5">mauvais sommeil</p></td>
+                <td><p class = "cases" id="6">bon sommeil</p></td>
+                <td><p class = "cases" id="7">bon sommeil</p></td>
         </tr>
-        <tr>
+        <tr id = "7h">
                 <td>
-                    8h
+                    07h
                 </td>
-                 <td>
-                    javascript
-                </td>
-                 <td>
-                    typescript
-                </td>
-                 <td>
-                    react.js
-                </td>
-                 <td>
-                    express.js
-                </td>
-                 <td>
-                    node.js
-                </td>
-                 <td>
-                    sommeil
-                </td>
-                 <td>
-                    sommeil
-                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>
         </tr>
-        <tr>
+        <tr id = "8h">
                 <td>
-                    9h
+                    08h
                 </td>
-                 <td>
-                    1
-                </td>
-                 <td>
-                    2
-                </td>
-                 <td>
-                    3
-                </td>
-                 <td>
-                    4
-                </td>
-                 <td>
-                    5
-                </td>
-                 <td>
-                    6
-                </td>
-                 <td>
-                    7
-                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>
         </tr>
-        <tr>
+        <tr id = "9h">
+                <td>
+                    09h
+                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>        </tr>
+        <tr id = "10h">
                 <td>
                     10h
                 </td>
-                 <td>
-                    1
-                </td>
-                 <td>
-                    2
-                </td>
-                 <td>
-                    3
-                </td>
-                 <td>
-                    4
-                </td>
-                 <td>
-                    5
-                </td>
-                 <td>
-                    6
-                </td>
-                 <td>
-                    7
-                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>
         </tr>
-        <tr>
+        <tr id = "11h">
                 <td>
                     11h
                 </td>
-                 <td>
-                    1
-                </td>
-                 <td>
-                    2
-                </td>
-                 <td>
-                    3
-                </td>
-                 <td>
-                    4
-                </td>
-                 <td>
-                    5
-                </td>
-                 <td>
-                    6
-                </td>
-                 <td>
-                    7
-                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>
         </tr>
-        <tr>
+        <tr id = "12h">
                 <td>
                     12h
                 </td>
-                 <td>
-                    1
-                </td>
-                 <td>
-                    2
-                </td>
-                 <td>
-                    3
-                </td>
-                 <td>
-                    4
-                </td>
-                 <td>
-                    5
-                </td>
-                 <td>
-                    6
-                </td>
-                 <td>
-                    7
-                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>
         </tr>
-        <tr>
+        <tr id = "13h">
                 <td>
                     13h
                 </td>
-                 <td>
-                    1
-                </td>
-                 <td>
-                    2
-                </td>
-                 <td>
-                    3
-                </td>
-                 <td>
-                    4
-                </td>
-                 <td>
-                    5
-                </td>
-                 <td>
-                    6
-                </td>
-                 <td>
-                    7
-                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>
         </tr>
-        <tr>
+        <tr id = "14h">
                 <td>
                     14h
                 </td>
-                 <td>
-                    1
-                </td>
-                 <td>
-                    2
-                </td>
-                 <td>
-                    3
-                </td>
-                 <td>
-                    4
-                </td>
-                 <td>
-                    5
-                </td>
-                 <td>
-                    6
-                </td>
-                 <td>
-                    7
-                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>
         </tr>
-        <tr>
+        <tr id = "15h">
                 <td>
                     15h
                 </td>
-                 <td>
-                    1
-                </td>
-                 <td>
-                    2
-                </td>
-                 <td>
-                    3
-                </td>
-                 <td>
-                    4
-                </td>
-                 <td>
-                    5
-                </td>
-                 <td>
-                    6
-                </td>
-                 <td>
-                    7
-                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>
         </tr>
-        <tr>
+        <tr id = "16h">
                 <td>
                     16h
                 </td>
-                 <td>
-                    1
-                </td>
-                 <td>
-                    2
-                </td>
-                 <td>
-                    3
-                </td>
-                 <td>
-                    4
-                </td>
-                 <td>
-                    5
-                </td>
-                 <td>
-                    6
-                </td>
-                 <td>
-                    7
-                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>
         </tr>
-        <tr>
+        <tr id = "17h">
                 <td>
                     17h
                 </td>
-                 <td>
-                    1
-                </td>
-                 <td>
-                    2
-                </td>
-                 <td>
-                    3
-                </td>
-                 <td>
-                    4
-                </td>
-                 <td>
-                    5
-                </td>
-                 <td>
-                    6
-                </td>
-                 <td>
-                    7
-                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>
         </tr>
-        <tr>
+        <tr id = "18h">
                 <td>
                     18h
                 </td>
-                 <td>
-                    1
-                </td>
-                 <td>
-                    2
-                </td>
-                 <td>
-                    3
-                </td>
-                 <td>
-                    4
-                </td>
-                 <td>
-                    5
-                </td>
-                 <td>
-                    6
-                </td>
-                 <td>
-                    7
-                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>
         </tr>
-        <tr>
+        <tr id = "19h">
                 <td>
                     19h
                 </td>
-                 <td>
-                    1
-                </td>
-                 <td>
-                    2
-                </td>
-                 <td>
-                    3
-                </td>
-                 <td>
-                    4
-                </td>
-                 <td>
-                    5
-                </td>
-                 <td>
-                    6
-                </td>
-                 <td>
-                    7
-                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>
         </tr>
-        <tr>
+        <tr id = "20h">
                 <td>
                     20h
                 </td>
-                 <td>
-                    1
-                </td>
-                 <td>
-                    2
-                </td>
-                 <td>
-                    3
-                </td>
-                 <td>
-                    4
-                </td>
-                 <td>
-                    5
-                </td>
-                 <td>
-                    6
-                </td>
-                 <td>
-                    7
-                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>
         </tr>
-        <tr>
+        <tr id = "21h">
                 <td>
                     21h
                 </td>
-                 <td>
-                    1
-                </td>
-                 <td>
-                    2
-                </td>
-                 <td>
-                    3
-                </td>
-                 <td>
-                    4
-                </td>
-                 <td>
-                    5
-                </td>
-                 <td>
-                    6
-                </td>
-                 <td>
-                    7
-                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>
         </tr>
-
-    </table>
+        <tr id = "22h">
+                <td>
+                    22h
+                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>
+        </tr>
+        <tr id = "23h">
+                <td>
+                    23h
+                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>
+        </tr>
+        <tr id = "24h">
+                <td>
+                    24h
+                </td>
+                <td><p class = "cases" id="1"></p></td>
+                <td><p class = "cases" id="2"></p></td>
+                <td><p class = "cases" id="3"></p></td>
+                <td><p class = "cases" id="4"></p></td>
+                <td><p class = "cases" id="5"></p></td>
+                <td><p class = "cases" id="6"></p></td>
+                <td><p class = "cases" id="7"></p></td>
+        </tr>
+     </table>
+</div>
 </body>
 <script src="../js/p1.js"></script>
 </html>
