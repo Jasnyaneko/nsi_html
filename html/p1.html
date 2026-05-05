@@ -5,19 +5,23 @@
         <meta charset="utf8">
     </head> 
 <body>
+<div id = describox>
+    <p id = "titretext"></p>
+    <p id = "descritext"></p>
+</div>
+<div id="change_panel">
+    <form id="form_panel">
+        <p id = "close_panel">X</p>
+        <p>titre</p>
+        <input type = "text" value="nom_case" name="titre_case" id = "title">
+        <br>
+        <p>description</p>
+        <textarea id = "desc" name="description"></textarea>
+        <br>
+        <input value="sauvegarder" type = "submit" id = "subm">
+        </form>
+</div>
 <div id = "content">
-    <div id="change_panel">
-            <form id="form_panel">
-                <p id = "close_panel">X</p>
-                <p>titre</p>
-                <input type = "text" value="nom_case" name="titre_case" id = "title">
-                <br>
-                <p>description</p>
-                <textarea id = "desc" name="description"></textarea>
-                <br>
-                <input value="sauvegarder" type = "submit" id = "subm">
-            </form>
-    </div>
     <h1>emploi du temps</h1>
     <table>
         <tr id = "titres">
@@ -30,147 +34,161 @@
                 <th>samedi</th>
                 <th>dimanche</th>
         </tr>
-        <tr id = "6h">
+        <tr id = "6">
                 <td>
                     06h
                 </td>
                 <td><p class = "cases" id="1">bon sommeil</p></td>
-                <td><p class = "cases" id="2">mauvais sommeil</p></td>
-                <td><p class = "cases" id="3">mauvais sommeil</p></td>
-                <td><p class = "cases" id="4">mauvais sommeil</p></td>
+                <td><p class = "cases" id="2">mauvais reveil</p></td>
+                <td><p class = "cases" id="3">mauvais reveil</p></td>
+                <td><p class = "cases" id="4">mauvais reveil</p></td>
                 <td><p class = "cases" id="5">mauvais sommeil</p></td>
                 <td><p class = "cases" id="6">bon sommeil</p></td>
                 <td><p class = "cases" id="7">bon sommeil</p></td>
         </tr>
+        <tr id = "7">
+                <td>
+                    07h
+                </td>
+                <td><p class = "cases" id="1">bon sommeil</p></td>
+                <td><p class = "cases" id="2">metro</p></td>
+                <td><p class = "cases" id="3">metro</p></td>
+                <td><p class = "cases" id="4">metro</p></td>
+                <td><p class = "cases" id="5">mauvais sommeil</p></td>
+                <td><p class = "cases" id="6">bon sommeil</p></td>
+                <td><p class = "cases" id="7">bon sommeil</p></td>
+        </tr>
+        <tr  id = "8">
                 <td>
                     08h
                 </td>
-                <td><p class = "cases" id="1"></p></td>
-                <td><p class = "cases" id="2"></p></td>
-                <td><p class = "cases" id="3"></p></td>
-                <td><p class = "cases" id="4"></p></td>
-                <td><p class = "cases" id="5"></p></td>
-                <td><p class = "cases" id="6"></p></td>
-                <td><p class = "cases" id="7"></p></td>
+                <td><p class = "cases" id="1">bon reveil</p></td>
+                <td><p class = "cases" id="2">NSI</p></td>
+                <td><p class = "cases" id="3">cours</p></td>
+                <td><p class = "cases" id="4">cours</p></td>
+                <td><p class = "cases" id="5">cours</p></td>
+                <td><p class = "cases" id="6">bon sommeil</p></td>
+                <td><p class = "cases" id="7">bon sommeil</p></td>
         </tr>
         <tr id = "9h">
                 <td>
                     09h
                 </td>
-                <td><p class = "cases" id="1"></p></td>
-                <td><p class = "cases" id="2"></p></td>
-                <td><p class = "cases" id="3"></p></td>
-                <td><p class = "cases" id="4"></p></td>
-                <td><p class = "cases" id="5"></p></td>
-                <td><p class = "cases" id="6"></p></td>
-                <td><p class = "cases" id="7"></p></td>        </tr>
+                <td><p class = "cases" id="1">metro</p></td>
+                <td><p class = "cases" id="2">NSI</p></td>
+                <td><p class = "cases" id="3">cours</p></td>
+                <td><p class = "cases" id="4">trou</p></td>
+                <td><p class = "cases" id="5">cours</p></td>
+                <td><p class = "cases" id="6">bon sommeil</p></td>
+                <td><p class = "cases" id="7">bon sommeil</p></td>        
+        </tr>
         <tr id = "10h">
                 <td>
                     10h
                 </td>
-                <td><p class = "cases" id="1"></p></td>
-                <td><p class = "cases" id="2"></p></td>
-                <td><p class = "cases" id="3"></p></td>
-                <td><p class = "cases" id="4"></p></td>
-                <td><p class = "cases" id="5"></p></td>
-                <td><p class = "cases" id="6"></p></td>
-                <td><p class = "cases" id="7"></p></td>
+                <td><p class = "cases" id="1">cours</p></td>
+                <td><p class = "cases" id="2">cours</p></td>
+                <td><p class = "cases" id="3">cours</p></td>
+                <td><p class = "cases" id="4">cours</p></td>
+                <td><p class = "cases" id="5">cours</p></td>
+                <td><p class = "cases" id="6">bon sommeil</p></td>
+                <td><p class = "cases" id="7">bon sommeil</p></td>
         </tr>
         <tr id = "11h">
                 <td>
                     11h
                 </td>
-                <td><p class = "cases" id="1"></p></td>
-                <td><p class = "cases" id="2"></p></td>
-                <td><p class = "cases" id="3"></p></td>
-                <td><p class = "cases" id="4"></p></td>
-                <td><p class = "cases" id="5"></p></td>
-                <td><p class = "cases" id="6"></p></td>
-                <td><p class = "cases" id="7"></p></td>
+                <td><p class = "cases" id="1">cours</p></td>
+                <td><p class = "cases" id="2">cours</p></td>
+                <td><p class = "cases" id="3">cours</p></td>
+                <td><p class = "cases" id="4">cours</p></td>
+                <td><p class = "cases" id="5">cours</p></td>
+                <td><p class = "cases" id="6">bon reveil</p></td>
+                <td><p class = "cases" id="7">bon reveil</p></td>
         </tr>
         <tr id = "12h">
                 <td>
                     12h
                 </td>
-                <td><p class = "cases" id="1"></p></td>
-                <td><p class = "cases" id="2"></p></td>
-                <td><p class = "cases" id="3"></p></td>
-                <td><p class = "cases" id="4"></p></td>
-                <td><p class = "cases" id="5"></p></td>
-                <td><p class = "cases" id="6"></p></td>
-                <td><p class = "cases" id="7"></p></td>
+                <td><p class = "cases" id="1">mangeaille</p></td>
+                <td><p class = "cases" id="2">appel a la famille</p></td>
+                <td><p class = "cases" id="3">metro</p></td>
+                <td><p class = "cases" id="4">cours</p></td>
+                <td><p class = "cases" id="5">metro</p></td>
+                <td><p class = "cases" id="6">regret de l'heure du reveil</p></td>
+                <td><p class = "cases" id="7">acceptation de l'heure du reveil</p></td>
         </tr>
         <tr id = "13h">
                 <td>
                     13h
                 </td>
-                <td><p class = "cases" id="1"></p></td>
-                <td><p class = "cases" id="2"></p></td>
-                <td><p class = "cases" id="3"></p></td>
-                <td><p class = "cases" id="4"></p></td>
-                <td><p class = "cases" id="5"></p></td>
-                <td><p class = "cases" id="6"></p></td>
-                <td><p class = "cases" id="7"></p></td>
+                <td><p class = "cases" id="1">code au cdi</p></td>
+                <td><p class = "cases" id="2">mangeaille</p></td>
+                <td><p class = "cases" id="3">cuisine + mangeaille</p></td>
+                <td><p class = "cases" id="4">mangeaille</p></td>
+                <td><p class = "cases" id="5">mangeaille</p></td>
+                <td><p class = "cases" id="6">exploration des internet</p></td>
+                <td><p class = "cases" id="7">exploration des internet</p></td>
         </tr>
         <tr id = "14h">
                 <td>
                     14h
                 </td>
-                <td><p class = "cases" id="1"></p></td>
-                <td><p class = "cases" id="2"></p></td>
-                <td><p class = "cases" id="3"></p></td>
-                <td><p class = "cases" id="4"></p></td>
-                <td><p class = "cases" id="5"></p></td>
-                <td><p class = "cases" id="6"></p></td>
-                <td><p class = "cases" id="7"></p></td>
+                <td><p class = "cases" id="1">cours</p></td>
+                <td><p class = "cases" id="2">cours</p></td>
+                <td><p class = "cases" id="3">sieste</p></td>
+                <td><p class = "cases" id="4">NSI</p></td>
+                <td><p class = "cases" id="5">metro</p></td>
+                <td><p class = "cases" id="6">marche</p></td>
+                <td><p class = "cases" id="7">exploration des internet</p></td>
         </tr>
         <tr id = "15h">
                 <td>
                     15h
                 </td>
-                <td><p class = "cases" id="1"></p></td>
-                <td><p class = "cases" id="2"></p></td>
-                <td><p class = "cases" id="3"></p></td>
-                <td><p class = "cases" id="4"></p></td>
-                <td><p class = "cases" id="5"></p></td>
-                <td><p class = "cases" id="6"></p></td>
-                <td><p class = "cases" id="7"></p></td>
+                <td><p class = "cases" id="1">cours</p></td>
+                <td><p class = "cases" id="2">cours</p></td>
+                <td><p class = "cases" id="3">sieste</p></td>
+                <td><p class = "cases" id="4">NSI</p></td>
+                <td><p class = "cases" id="5">code au cdi</p></td>
+                <td><p class = "cases" id="6">marche</p></td>
+                <td><p class = "cases" id="7">exploration des internet</p></td>
         </tr>
         <tr id = "16h">
                 <td>
                     16h
                 </td>
-                <td><p class = "cases" id="1"></p></td>
-                <td><p class = "cases" id="2"></p></td>
-                <td><p class = "cases" id="3"></p></td>
-                <td><p class = "cases" id="4"></p></td>
-                <td><p class = "cases" id="5"></p></td>
-                <td><p class = "cases" id="6"></p></td>
-                <td><p class = "cases" id="7"></p></td>
+                <td><p class = "cases" id="1">cours</p></td>
+                <td><p class = "cases" id="2">cours</p></td>
+                <td><p class = "cases" id="3">rapelle des devoirs</p></td>
+                <td><p class = "cases" id="4">cours</p></td>
+                <td><p class = "cases" id="5">physique chimie</p></td>
+                <td><p class = "cases" id="6">marche</p></td>
+                <td><p class = "cases" id="7">realisation du temps passé sur internet</p></td>
         </tr>
         <tr id = "17h">
                 <td>
                     17h
                 </td>
-                <td><p class = "cases" id="1"></p></td>
-                <td><p class = "cases" id="2"></p></td>
-                <td><p class = "cases" id="3"></p></td>
-                <td><p class = "cases" id="4"></p></td>
-                <td><p class = "cases" id="5"></p></td>
-                <td><p class = "cases" id="6"></p></td>
-                <td><p class = "cases" id="7"></p></td>
+                <td><p class = "cases" id="1">cours</p></td>
+                <td><p class = "cases" id="2">cours</p></td>
+                <td><p class = "cases" id="3">devoirs</p></td>
+                <td><p class = "cases" id="4">cours</p></td>
+                <td><p class = "cases" id="5">physique chimie</p></td>
+                <td><p class = "cases" id="6">marche</p></td>
+                <td><p class = "cases" id="7">petit projet</p></td>
         </tr>
         <tr id = "18h">
                 <td>
                     18h
                 </td>
-                <td><p class = "cases" id="1"></p></td>
-                <td><p class = "cases" id="2"></p></td>
-                <td><p class = "cases" id="3"></p></td>
-                <td><p class = "cases" id="4"></p></td>
-                <td><p class = "cases" id="5"></p></td>
-                <td><p class = "cases" id="6"></p></td>
-                <td><p class = "cases" id="7"></p></td>
+                <td><p class = "cases" id="1">metro</p></td>
+                <td><p class = "cases" id="2">metro</p></td>
+                <td><p class = "cases" id="3">exploration des internet</p></td>
+                <td><p class = "cases" id="4">metro</p></td>
+                <td><p class = "cases" id="5">metro</p></td>
+                <td><p class = "cases" id="6">marche</p></td>
+                <td><p class = "cases" id="7">petit projet</p></td>
         </tr>
         
      </table>

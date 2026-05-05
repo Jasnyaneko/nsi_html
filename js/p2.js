@@ -27,7 +27,7 @@ let init_part = () => ({
     iterator:[0,0,0,0],
     //iterateurs des temps de click
     
-    key:["a","s","d","f"],
+    key:[83,68,70,71],
     //on peut changer les touches de jeux ici
     
     pressed:[new Set(),new Set(),new Set(),new Set()],
@@ -130,7 +130,7 @@ document.body.addEventListener("keydown",(key) => {
     for(let i = 0 ; i < 4 ; i = i + 1){
         //itere a travers les cases
 
-        if(key.key.toString() == part.key[i] && part.active_blocks[i] == true){
+        if(key.keyCode == part.key[i] && part.active_blocks[i] == true){
             //vérifie si la touche appuyé correspond a la case
 
             if(!part.pressed[i].has(part.iterator[i])){

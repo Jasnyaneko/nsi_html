@@ -5,32 +5,25 @@
     --pressed-particle3 :"";
 }
 
-table{
-    border-collapse: separate;
-    border-spacing: max(0.4vh,0.4em);
-    width: 45em;
-    height: max(5em,6vh);
-    gap: 3vh;
-    background-color: aquamarine;
-    position: absolute;
-    bottom: 10%;
-    right:50%;
-    translate: 50%;
-}
-
-table td{
+.clickable{
     border-radius: 1em;
     text-align: center;
     background-color: rgb(220, 220, 220);
     transition: 100ms;
-
+    height: 10vh;
+    width: 10vw;
 }
 
-table td::after{
+.clickable::after{
     position: absolute;
     top: 100%;
     translate: -50%;
 }
+
+#k0
+#k1
+#k2
+#k3
 
 #k0::after{content: var(--pressed-particle0);}
 #k1::after{content: var(--pressed-particle1);}

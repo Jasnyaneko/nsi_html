@@ -1,11 +1,16 @@
-
+:root{
+    --mouseonpseudo : none;
+    --pseudocontent : "";
+}
 body{
     font-family: monospace;
-    height: 100vh;
-    background-color: rgb(114, 79, 162);
+    font-size: 1vw;
+    background-color: rgb(27, 45, 34);
+    background-repeat: no-repeat;
     background-image: url("../photo/pikmin.jpg");
 }
 table{
+    table-layout: fixed;
     padding: 0.5em;
     background-image: linear-gradient(rgba(224, 190, 255, 0.502),rgba(118, 102, 175, 0.449));
     backdrop-filter: blur(3px);
@@ -19,12 +24,22 @@ table{
     background-color: antiquewhite;
 }
 table td{
+    position: relative;
     backdrop-filter: blur(5px);
     background-image:linear-gradient(rgba(250, 237, 222, 0.76),rgba(255, 246, 234, 0.691));
     color: rgb(62, 99, 124);
     text-align: center;
     border: rgba(251, 255, 228, 0.298) 0.2em solid;
     border-radius: 0.3em;
+}
+.cases::before{
+    position: absolute;
+    text-align: center;
+    transform: translate(50%);
+    bottom: 0%;
+    right: 50%;
+    content: var(--pseudocontent);
+    background-color: aliceblue;
 }
 th{
     color: rgb(0, 126, 126);
@@ -34,10 +49,10 @@ p{
     user-select: none;
 }
 #change_panel{
-        z-index: 999;
+    z-index: 5;
     transition: 300ms;
     background-color: rgba(255, 255, 255, 0);
-    position: fixed;
+    position:fixed;
     height: 100vh;
     transform: translate(-50% -50%);  
     width: 100vw;
@@ -84,6 +99,19 @@ h1{
     translate: -50%;
     background-image: linear-gradient(rgba(0, 0, 255, 0.276),rgba(115, 0, 255, 0.224));
     backdrop-filter: blur(3px);
-    height: calc(100vh - 2em);
     padding: 2em;
+}
+#describox{
+    z-index: 4;
+    position: fixed;
+    width: 20vw;
+    height: fit-content;
+    background-color: rgba(46, 63, 58, 0.299);
+    backdrop-filter: blur(5px);
+    border: rgb(185, 255, 234) solid 0.2em;
+    border-radius: 2em;
+    padding: 1em;
+}
+#describox p{
+    color: aquamarine;
 }
