@@ -32,14 +32,14 @@ cases.forEach((Case)=>{Case.parentElement.addEventListener("click",() => {
     //affiche l'interface de modification des cases
 })
     Case.parentElement.addEventListener("mouseenter",() => {
+        document.querySelector("#describox").style.display = "inherit"
         titretext.innerHTML = Case.innerHTML
         descritext.innerHTML = descriptions_doc[parseInt(Case.parentElement.parentElement.id)-6][parseInt(Case.id)-1]
         //les paragraphes de la #describox recoivent les les valeur du titre et de la description correspondant a la cas survolé par la souris
     })
     Case.parentElement.addEventListener("mouseleave",() => {
-        titretext.innerHTML = ""
-        descritext.innerHTML = ""
-        //les paragraphes de la #describox sont remis a vide
+        document.querySelector("#describox").style.display = "none"
+        //la boite de description disparait
     })
 })
 document.querySelector("#close_panel").addEventListener("click",() => {

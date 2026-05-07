@@ -1,46 +1,76 @@
 :root{
+    --menu_opacity: blur(5px) ;
     --pressed-particle0 :"";
     --pressed-particle1 :"";
     --pressed-particle2 :"";
     --pressed-particle3 :"";
 }
 
+body{
+    font-family: monospace;
+    height: 100vh;
+    background-image: linear-gradient(rgb(134, 94, 228),rgb(3, 0, 80) 80%);
+}
+
 .clickable{
     border-radius: 1em;
     text-align: center;
     background-color: rgb(220, 220, 220);
-    transition: 100ms;
-    height: 10vh;
-    width: 10vw;
+    transition: 50ms;
+    height: 7vh;
+    width: 7vw;
+    position: absolute;
+    translate: 50%;
 }
 
 .clickable::after{
     position: absolute;
     top: 100%;
     translate: -50%;
+    color: aliceblue;
+}
+.clickable::before{
+    position: absolute;
+    bottom: 100%;
+    color: aliceblue;
 }
 
-#k0
-#k1
-#k2
-#k3
+#k0{
+    top: 70%;
+    right: 70%;
+}
+#k1{
+
+    right: 58%;
+    top: 80%;
+}
+#k2{
+    right: 42%;
+    top: 80%;
+}
+#k3{
+right: 30%;
+top: 70%;
+}
+
+#k0::before{
+    content: "S";
+}
+#k1::before{
+    content: "D";
+}
+#k2::before{
+    content: "F";
+}
+#k3::before{
+    content: "G";
+}
 
 #k0::after{content: var(--pressed-particle0);}
 #k1::after{content: var(--pressed-particle1);}
 #k2::after{content: var(--pressed-particle2);}
 #k3::after{content: var(--pressed-particle3);}
 
-#game{
-    font-size: max(1vh,1vw);
-    background-color: yellowgreen;
-    width: max(95vw,calc(100vw - 5vh));
-    height: max(calc(100vh - 5vw),95vh) ;
-    display: block;
-    position: absolute;
-    right: 50%;
-    bottom: 50%;
-    translate: 50% 50%;
-}
 #start_stop{
     width: max(20em);
     height:fit-content;
@@ -54,30 +84,61 @@
     
     
 }
+#start_stop_text{
+    width: max(20em);
+    height:fit-content;
+    position: absolute;
+    top: 70%;
+    right: 50%;
+    translate: 50%;
+    
+    
+}
+#start_stop_text{
+    color: white;
+    width: max(20em);
+    height:fit-content;
+    position: absolute;
+    top: 60%;
+    right: 50%;
+    translate: 50% -50%;
+    text-align: center;
+}
 @keyframes squish {
     0% , 100%{height: 100%;}
     50% {height: 80%;}
 }
 
 #score_board{
+    color: rgb(200, 167, 255);
+    width: fit-content;
+    z-index: 5;
     position: absolute;
-    right: 5vw;
+    left: 2vw;
+    top: 5vh;
+    width: fit-content;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    background-color: transparent;
 }
 #menu{
+    background-color: rgba(12, 6, 48, 0.5);
+    backdrop-filter: var(--menu_opacity);
     display: block;
-    position:fixed;
+    position:absolute;
     width: 100vw;
     height: 100vh;
     right: 50%;
     top: 50%;
     translate: 50% -50%;
     z-index: 4;
-    background-color: rgba(0, 0, 0, 0);
 }
 
 #game_title{
-    position: absolute;
+    opacity: 20%;
+    z-index: 7;
+    position: fixed;
     top: clamp(2vh,1em,10vw);
-    left: clamp(2vh,1em,10vw);
+    right: clamp(2vh,1em,10vw);
     width: clamp(20vh,16em,20vw);
 }

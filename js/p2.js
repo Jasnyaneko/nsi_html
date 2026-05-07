@@ -21,7 +21,7 @@ let init_part = () => ({
 
     totalscore:0,
     
-    timestamps:[[500,500*2],[500,500*3,500*5,500*6],[500*2,500*4],[500*3,500*4]],
+    timestamps:[[700,700*2],[700,700*3,700*5,700*6],[700*2,700*4],[700*3,700*4]],
     //liste de liste contenant les différents moments en milliseconde où les chaque note doit être appuyé
     
     iterator:[0,0,0,0],
@@ -91,15 +91,15 @@ const rythmloop = () => {
         //regarde si la suite de notes de la colonnes est terminé et l'inscrit dans la variable finished
 
         if(part.active_blocks[i]){
-            document.getElementById("k" + i.toString()).style.backgroundColor = "green"
+            document.getElementById("k" + i.toString()).style.backgroundColor = "rgb(122, 255, 228)"
             //defini le style des cases actives
         }
         else if((part.timestamps[i][part.iterator[i]] - (now + time_gap)) < 400 && (part.timestamps[i][part.iterator[i]] - (now + time_gap)) > 0){
-            document.getElementById("k" + i.toString()).style.backgroundColor = "yellow"
+            document.getElementById("k" + i.toString()).style.backgroundColor = "rgb(255, 228, 132)"
             //change le style des cases qui sont 400 ms avant d'être actives
         }
         else{
-            document.getElementById("k" + i.toString()).style.backgroundColor = "red"
+            document.getElementById("k" + i.toString()).style.backgroundColor = "rgb(255, 123, 182)"
             // defini le style des cases inactive
         }
     }   
@@ -107,7 +107,10 @@ const rythmloop = () => {
         return (cases === true)
         //verifie si toutes les colonnes ont fini leurs séquences
     })){
+        document.getElementById("start_stop_text").innerHTML = "press space to play"
         document.getElementById("start_stop").setAttribute("src","../photo/play_button.svg")
+        document.querySelector("#menu").style.backgroundColor = "rgba(12, 6, 48, 0.5)";
+        document.querySelector(":root").style.setProperty("--menu_opacity","blur(5px)")
         // remet le bouton play
     
         playing = false
@@ -154,8 +157,8 @@ document.body.addEventListener("keydown",(key) => {
                 //donne 0.75 point
                 
                 document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"'good'")
-                // change la variable css des pseudo elements des cases en good
-                
+               // change la variable css des pseudo elements des cases en good
+
                 setTimeout(() => {
                     document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"''")}, 300)
                     //remet la variable css en string vide 300 ms après le changement précédent
@@ -173,14 +176,17 @@ document.body.addEventListener("keydown",(key) => {
     }
 })
 
-document.getElementById("start_stop").addEventListener("click",()=>{
-    //vérifie si le bouton play est cliqué
-    
+const launch = () => {
+    // fonction lançant le jeu
     if(playing == false){
         document.getElementById("start_stop").setAttribute("src","../photo/stop_button.svg")
         part = init_part()
         game_started_time = new Date().getTime()
         loop = requestAnimationFrame(rythmloop)
+        document.getElementById("start_stop_text").innerHTML = "press space to stop"
+        document.querySelector("#menu").style.backgroundColor = "transparent";
+        document.querySelector(":root").style.setProperty("--menu_opacity","blur(0px)")
+
         //si le jeu n'est pas actif change le bouton play en stop , reinitialise part et le temps de départ , et lance la boucle du jeu
     }
     else if(playing == true ){
@@ -188,8 +194,22 @@ document.getElementById("start_stop").addEventListener("click",()=>{
         console.log(part)
         playing = false
         cancelAnimationFrame(loop)
+        document.getElementById("start_stop_text").innerHTML = "press space to play"
+        document.querySelector("#menu").style.backgroundColor = "rgba(12, 6, 48, 0.5)";
+        document.querySelector(":root").style.setProperty("--menu_opacity","blur(5px)")
         // si le jeu est en court change le bouton en play , change la variable playing en false , arrete la boucle de jeu
     }
     else{console.log("il y a un gros probleme")}
     // si playing est ni vrai ni faux , ça veut dire que la viariable a été modifiée dans la console
+}
+
+document.getElementById("start_stop").addEventListener("click",()=>{launch()})
+//vérifie si le bouton play est cliqué
+
+document.body.addEventListener("keydown",(key) => {
+    console.log(key)
+    if (key.keyCode == 32){
+        console.log(key)
+        launch()
+    }
 })

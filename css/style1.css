@@ -21,13 +21,13 @@ table{
     border-radius: 1em;
 }
 #titres{
-    background-color: antiquewhite;
+    background-color: rgb(250, 215, 242);
 }
 table td{
     position: relative;
     backdrop-filter: blur(5px);
-    background-image:linear-gradient(rgba(250, 237, 222, 0.76),rgba(255, 246, 234, 0.691));
-    color: rgb(62, 99, 124);
+    background-image:linear-gradient(rgba(223, 222, 250, 0.81),rgba(243, 234, 255, 0.933));
+    color: rgb(41, 119, 171);
     text-align: center;
     border: rgba(251, 255, 228, 0.298) 0.2em solid;
     border-radius: 0.3em;
@@ -45,7 +45,7 @@ th{
     color: rgb(0, 126, 126);
 }
 p{
-    color: rgb(62, 130, 102);
+    color: rgb(2, 103, 129);
     user-select: none;
 }
 #change_panel{
@@ -88,7 +88,7 @@ p{
 }
 h1{
     border-radius: 0.5em;
-    color: antiquewhite;
+    color: rgb(137, 218, 183);
     text-align: center;
     text-decoration: underline;
 }

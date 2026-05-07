@@ -4,15 +4,21 @@
     <meta charset="utf8">
     <link rel="stylesheet" href="../css/style2.css">
 <body>
-    
     <img id="game_title" src="../photo/sonyo_logo.svg">
-    <div id="menu"><img src="../photo/play_button.svg" id = "start_stop"></div>
-    <h1 id = score_board>score:<span id="score">0</span></h1>
+    <div id="menu">
+        <img src="../photo/play_button.svg" id = "start_stop">
+        <p id = "start_stop_text">press space to play</p>
+    </div>
+    <h1 id = score_board>score:<span id="score">0</span><br>
+        <span style="color: rgb(255, 123, 182);">ne pas cliquer</span><br>
+        <span style="color: rgb(255, 228, 132);">bientot clickable</span><br>
+        <span style="color: rgb(122, 255, 228);">clicker !</span>
+    </h1>
 
-                <div class="clickable" id="k0">S</div>
-                <div class="clickable" id="k1">D</div>
-                <div class="clickable" id="k2">F</div>
-                <div class="clickable" id="k3">G</div>
+                <div class="clickable" id="k0"></div>
+                <div class="clickable" id="k1"></div>
+                <div class="clickable" id="k2"></div>
+                <div class="clickable" id="k3"></div>
 </body>
 <script src="../js/p2.js"></script>
 </html>
