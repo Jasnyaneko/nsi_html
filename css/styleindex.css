@@ -11,7 +11,7 @@ body{
     align-items: center;
     overflow: hidden;
     height: 100vh;
-    background-image: url(../photo/pikmin.jpg);
+    background-image: url(../photo/spimg.jpg);
     backdrop-filter: blur(3px);
 }
 
@@ -34,7 +34,7 @@ h1::after{
 #main_content{
     padding: 1em;
     backdrop-filter: blur(5px);
-    background-color: rgba(123, 188, 187, 0.707);
+    background-color: rgba(123, 188, 187, 0.082);
     border-radius: 1em;
     border: solid rgb(188, 188, 255) 0.2em;
     gap: 0.5em;
@@ -64,7 +64,7 @@ div{
     align-items: center;
     border-radius: 0.6em;
     border: solid rgb(188, 188, 255) 0.2em;
-    background-image: linear-gradient(rgba(61, 93, 61, 0.199),rgba(79, 110, 110, 0.273));
+    background-image: linear-gradient(rgba(82, 61, 93, 0.505),rgba(48, 62, 62, 0.184));
 
 }
 #main_content>div>a>img{
