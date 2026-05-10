@@ -1,3 +1,6 @@
+const tip = new Audio("../son/tip.mp3")
+const tap = new Audio("../son/tap.mp3")
+const whoosh = new Audio("../son/whoosh.mp3")
 
 let playing = false
 // indique si le jeu est en court ou non
@@ -68,7 +71,8 @@ const rythmloop = () => {
     
             if(!part.pressed[i].has(part.iterator[i])){
                 //verifie si la case a été dejà joué (les sets ne pouvant contenir qu'une seule fois une valeur)
-    
+                whoosh.load()
+                whoosh.play()
                 part.miss[i] = part.miss[i] + 1
                 document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"'missed'")
                 // change la variable css des pseudo elements des cases en missed
@@ -138,10 +142,13 @@ document.body.addEventListener("keydown",(key) => {
 
             if(!part.pressed[i].has(part.iterator[i])){
                 // verifie que la note n'a pas deja été jouée (par absence dans le set)
-
+                tip.load()
+                tap.load()
                 if(Math.abs(part.timestamps[i][part.iterator[i]] - now) < 50){
                     //vérifie si la durée entre la note active et l'appuie de la touche est inférieur à 50ms
                     
+                    tip.play()
+                    //joue le son tip
                     document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"'perfect'")
                     // change la variable css des pseudo elements des cases en perfect
                     
@@ -153,15 +160,18 @@ document.body.addEventListener("keydown",(key) => {
                     //donne un point de score
                 }
                 else{
-                part.totalscore = part.totalscore + 0.75
-                //donne 0.75 point
+                    part.totalscore = part.totalscore + 0.75
+                    //donne 0.75 point
                 
-                document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"'good'")
-               // change la variable css des pseudo elements des cases en good
+                    tap.play()
+                    //joue le son tap
 
-                setTimeout(() => {
-                    document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"''")}, 300)
-                    //remet la variable css en string vide 300 ms après le changement précédent
+                    document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"'good'")
+                   // change la variable css des pseudo elements des cases en good
+
+                    setTimeout(() => {
+                        document.querySelector(":root").style.setProperty("--pressed-particle"+i.toString(),"''")}, 300)
+                        //remet la variable css en string vide 300 ms après le changement précédent
                 }
                 document.getElementById("score").innerHTML = part.totalscore.toString()
                 //met a jour l'html du score

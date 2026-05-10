@@ -2,6 +2,11 @@ const changepanel = document.querySelector("#change_panel")
 const cases = document.querySelectorAll(".cases")
 const descritext = document.querySelector("#descritext")
 const titretext = document.querySelector("#titretext")
+const musique = new Audio("../son/door_to_the_cosmos.mp3")
+musique.load()
+musique.volume = 0.4
+musique.loop = true
+musique.play()
 
 let case_obj;
 let descriptions_doc = [

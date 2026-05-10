@@ -4,19 +4,18 @@
 }
 body{
     font-family: monospace;
-    font-size: 1vw;
+    font-size: min(1em,1.5vw);
     background-color: rgb(27, 45, 34);
     background-repeat: no-repeat;
-    background-image: url("../photo/pikmin.jpg");
+    background-position: center;
+    background-image: url("../photo/bgforet.webp");
 }
 table{
-    table-layout: fixed;
+        table-layout: fixed;
     padding: 0.5em;
     background-image: linear-gradient(rgba(224, 190, 255, 0.502),rgba(118, 102, 175, 0.449));
-    backdrop-filter: blur(3px);
     width: 90vw;
     height: 90vh;
-    border-collapse: separate;
     border: solid 0.2em rgb(233, 214, 255);
     border-radius: 1em;
 }
@@ -25,7 +24,6 @@ table{
 }
 table td{
     position: relative;
-    backdrop-filter: blur(5px);
     background-image:linear-gradient(rgba(223, 222, 250, 0.81),rgba(243, 234, 255, 0.933));
     color: rgb(41, 119, 171);
     text-align: center;
@@ -66,8 +64,8 @@ p{
     backdrop-filter: blur(5px);
     padding: 2vh;
     background-image: linear-gradient(rgba(240, 248, 255, 0.556),rgba(240, 248, 255, 0.248));
-    height: calc(70vh);
-    width: calc(60vw);
+    height: 80vh;
+    width: 60vw;
     border: solid 0.2em aliceblue;
     border-radius: 5vh;
 }
@@ -88,7 +86,11 @@ p{
 }
 h1{
     border-radius: 0.5em;
-    color: rgb(137, 218, 183);
+    border: solid 0.1em rgb(233, 214, 255);
+    backdrop-filter: blur(3px);
+    color: transparent;
+    background-clip: text;
+    background-image:linear-gradient(rgb(133, 154, 210), rgb(255, 200, 200));
     text-align: center;
     text-decoration: underline;
 }
@@ -98,8 +100,8 @@ h1{
     left: 50% ;
     translate: -50%;
     background-image: linear-gradient(rgba(0, 0, 255, 0.276),rgba(115, 0, 255, 0.224));
-    backdrop-filter: blur(3px);
-    padding: 2em;
+    padding-left: 5vw ;
+    padding-right: 5vw ;
 }
 #describox{
     z-index: 4;
@@ -108,7 +110,7 @@ h1{
     height: fit-content;
     background-color: rgba(46, 63, 58, 0.299);
     backdrop-filter: blur(5px);
-    border: rgb(185, 255, 234) solid 0.2em;
+    border: rgb(208, 153, 220) solid 0.2em;
     border-radius: 2em;
     padding: 1em;
 }

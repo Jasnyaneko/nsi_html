@@ -1,29 +1,97 @@
+:root{
+    --text_gradient: linear-gradient(rgb(242, 255, 255) , rgb(216, 255, 252));
+}
+
 body{
-    background-color:rgb(255, 0, 111) ;
-    background-image: linear-gradient(rgb(81, 20, 101),rgb(255, 0, 111));}
-#ab{
-    background-color: aliceblue;
+    padding: 1em;
+    padding-left:3em;
+    padding-right:3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+    background-image: url(../photo/pikmin.jpg);
+    backdrop-filter: blur(3px);
 }
-.o{
-    transition: 50ms;
-}
-#mainlogo{
-    width:min(30vw,40vh);
-}
-table td img{
-    translate: 0vh 0vh;
-    transition: 500ms;
+
+
+h1{
     text-align: center;
-    width: 10vw;
-    height: 10vw;
-    font-size: large;}
-#a4:hover{
-    border: min(0.3vh,0.3vw) yellow solid;
-    background-color:rgba(240, 248, 255, 0.743) ;
+    font-family: monospace;
+    background-clip: text;
+    background-image: var(--text_gradient) ;
+    color: transparent;
 }
-#a4{
-    position: relative;
+h1::after{
+    display: flex;
+    content: "";
+    translate: -5%;
+    width: 110%;
+    height: 2px;
+    background-image: var(--text_gradient);
 }
-#playbutton{
-    width:min(15vw,20vh);
+#main_content{
+    padding: 1em;
+    backdrop-filter: blur(5px);
+    background-color: rgba(123, 188, 187, 0.707);
+    border-radius: 1em;
+    border: solid rgb(188, 188, 255) 0.2em;
+    gap: 0.5em;
+    font-family: monospace;
+    display: grid;
+    grid-template-areas:
+    "title title title title"
+    "p1 p1 p2 p2"
+    "par par par par";
+    grid-template-columns: repeat(4 , 1fr);
+}
+#main_content>div>a{
+    display: flex;
+    background-clip: text ;
+    background-image:var(--text_gradient);
+    color: transparent;
+    font-size: 2.5em ;
+    width: 100%;
+    justify-content: center;
+}
+div{
+    gap: 1em;
+    padding: 1em;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.6em;
+    border: solid rgb(188, 188, 255) 0.2em;
+    background-image: linear-gradient(rgba(61, 93, 61, 0.199),rgba(79, 110, 110, 0.273));
+
+}
+#main_content>div>a>img{
+    filter: blur(1px);
+    width: 90%;
+    transition: 0.5s;
+}
+#main_content>div>a>img:hover{
+    filter: blur(0);
+}
+#p1{
+    grid-area: p1;
+}
+#p2{
+    grid-area: p2;
+}
+#title{
+    grid-area: title;
+}
+#txt{
+    text-align: center;
+    height: 10vh;
+    grid-area: par;
+}
+#txt>p{
+    font-size: 3vh;
+    background-image: var(--text_gradient);
+    background-clip: text;
+    color: transparent;
 }
